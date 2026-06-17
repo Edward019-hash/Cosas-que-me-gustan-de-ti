@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edward-Night ✨ 201 Cosas que me gustan de ti</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0a0f1e 0%, #1e1b4b 100%);
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      color: #e0f2fe;
+    }
+
+    h1, h2 {
+      margin: 40px 20px 20px;
+      color: #60a5fa;
+      text-shadow: 0 0 10px #3b82f6;
+    }
+
+    button {
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(59,130,246,0.4);
+      margin-top: 30px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(96,165,250,0.6);
+    }
+
+    .lista {
+      max-width: 700px;
+      margin: 20px auto;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .item {
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: 15px;
+      padding: 10px 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: showItem 0.5s ease forwards;
+      text-align: left;
+      border: 1px solid #3b82f6;
+    }
+
+    .razon-titulo {
+        font-weight: bold;
+        font-size: 1.1em;
+        margin-bottom: 5px;
+        color: #60a5fa;
+    }
+
+    .poema-texto {
+        font-style: italic;
+        font-size: 0.95em;
+        line-height: 1.4;
+        white-space: pre-line;
+        color: #94a3b8;
+    }
+
+    @keyframes latido {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .corazon-palpitante {
+      display: inline-block;
+      animation: latido 1s infinite alternate;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes showItem {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* CRÉDITO EDWARD-NIGHT */
+    .credit {
+      position: fixed;
+      bottom: 15px;
+      right: 18px;
+      font-size: 11px;
+      background: rgba(0,0,0,0.5);
+      padding: 5px 12px;
+      border-radius: 30px;
+      backdrop-filter: blur(5px);
+      color: #94a3b8;
+      z-index: 200;
+      font-family: monospace;
+      letter-spacing: 0.8px;
+    }
+    .credit span {
+      color: #60a5fa;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="musicaDeFondo" src="https://github.com/jesuxzx/Proyecto-/raw/0bc5794d80c5b528fd30a0a144196b3ec5ead152/yung%20kai%20-%20blue%20(sub.%20espa%C3%B1ol%20%2B%20lyrics).mp3" loop></audio>
+
+  <!-- CRÉDITO -->
+  <div class="credit">Hecho por <span>Edward-Night</span> ✨</div>
+
+  <h1>💙 Cosas que me gustan de ti 💙 <span class="corazon-palpitante">💙</span></h1>
+  <div id="primeraParte">
+    <h2>1. Tu sonrisa 💜<br>2. Tus ojos 💙<br>3. Tu forma de hablar ✨<br>4. Cómo me haces sentir 💜<br>5. Tu ternura 💙</h2>
+    <button onclick="mostrarSorpresa()">✨ Da click aqui ✨</button>
+  </div>
+
+  <div id="segundaParte" style="display:none;">
+    <h1>💙 ¿En serio crees que son solo 5? 💙</h1>
+    <button onclick="mostrarLista()">💜 Aquí van 230 cosas que me encantan de ti 💜</button>
+  </div>
+
+  <div id="lista" class="lista"></div>
+
+  <script>
+    const cosas = [
+      {
+        razon: "💙 El mundo se acomoda cuando llegas",
+        poema: "Andrea, cuando apareces, el espacio se vuelve más blando,\ncomo si la vida respirara más lento solo para mirarte."
+      },
+      {
+        razon: "💜 Cómo sostienes lo que otros sueltan",
+        poema: "Tienes una fuerza que no presume,\npero se nota cuando cuidas lo que a otros se les cae del alma."
+      },
+      {
+        razon: "✨ Tu forma de cerrar los ojos",
+        poema: "Cuando cierras los ojos, Andrea,\nparece que hablas con el universo sin decir nada,\ny yo me quedo ahí, esperando el milagro."
+      },
+      {
+        razon: "💙 Los gestos que no te das cuenta que haces",
+        poema: "Ese mechón que apartas sin pensarlo,\nesa ceja que levantas sin saberlo...\nson pequeños poemas que no sabes que escribes."
+      },
+      {
+        razon: "💜 Lo que haces con un “cómo estás”",
+        poema: "Cuando preguntas eso, Andrea, no es por rutina,\nes como si dijeras: “entrégame tus ruinas, yo sabré abrazarlas”."
+      },
+      {
+        razon: "✨ Tu relación con el tiempo",
+        poema: "No vives deprisa ni te quedas quieta:\ncaminas con el tiempo como si fueran amigos,\ncomo si lo convencieras de ser más amable."
+      },
+      {
+        razon: "💙 Tu mirada cuando estás en silencio",
+        poema: "Cuando callas y me miras,\nno necesito traducciones:\nahí está todo el amor que no cabe en palabras."
+      },
+      {
+        razon: "💜 Esa forma tuya de no rendirte",
+        poema: "Andrea, hay días en los que todo pesa,\npero tú igual te levantas, no por terquedad,\nsino porque tu alma no sabe rendirse."
+      },
+      {
+        razon: "✨ Lo que haces con lo simple",
+        poema: "Donde otros ven rutina, tú ves belleza.\nUn café contigo se vuelve ritual,\nuna caminata contigo se vuelve recuerdo."
+      },
+      {
+        razon: "💙 Cómo hablas de los que amas",
+        poema: "No hay mentira en tus palabras cuando nombras a alguien que quieres.\nEn tu voz se nota la lealtad,\nesa que no se aprende, se nace con ella."
+      }
+    ];
+
+    for (let i = 10; i <= 230; i++) {
+      cosas.push({
+        razon: `💙 Razón ${i} - Tu forma única de ser`,
+        poema: `Andrea, cada cosa que haces me recuerda por qué te elegí.\nEres luz, eres calma, eres mi hogar.\nGracias por existir y llenar mis días de amor. 💙💜✨`
+      });
+    }
+
+    function reproducirMusica() {
+      const musica = document.getElementById('musicaDeFondo');
+      if (musica) {
+        musica.play().catch(e => console.error("Error al reproducir la música:", e));
+      }
+    }
+
+    function mostrarSorpresa() {
+      document.getElementById("primeraParte").style.display = "none";
+      document.getElementById("segundaParte").style.display = "block";
+    }
+
+    function mostrarLista() {
+      const lista = document.getElementById("lista");
+      lista.style.display = "flex";
+      cosas.forEach((itemData, i) => {
+        setTimeout(() => {
+          const item = document.createElement("div");
+          item.className = "item";
+
+          const razonElement = document.createElement("div");
+          razonElement.className = "razon-titulo";
+          razonElement.textContent = `${i + 1}. ${itemData.razon}`;
+
+          const poemaElement = document.createElement("div");
+          poemaElement.className = "poema-texto";
+          poemaElement.textContent = itemData.poema;
+
+          item.appendChild(razonElement);
+          item.appendChild(poemaElement);
+          lista.appendChild(item);
+        }, i * 200);
+      });
+      document.getElementById("segundaParte").style.display = "none";
+
+      reproducirMusica();
+    }
+  </script>
+
+</body>
+</html>
